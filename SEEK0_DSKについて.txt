@@ -1,0 +1,19 @@
+＜SEEK0.DSK について＞
+お手持ちのマシン語プログラム（SEEK.BIN）を追加して利用してください。
+このDISKイメージファイル単体では動作しません。
+
+
+
+
+（補足） SEEK はプログラム２本で構成されています。
+
+● LIST１ マシン語プログラム（開始：&H9500～終了：&hE50F　実行番地は指定しない）
+　・ファイル名を"SEEK.BIN"にする
+
+● LIST２ ＢＡＳＩＣプログラム ※ SEEK0.DSK に修正後ファイルを格納済み
+　・ファイル名を"SEEK.BAS"にする
+　・BASICは以下のとおり修正する（「:DEFUSR=&HF89F:I=USR(0)」を追記）
+
+　　<修正前> 20 SCREEN2,2,0:OPEN"GRP:"AS#1:DEFINTA-Z
+　　<修正後> 20 SCREEN2,2,0:OPEN"GRP:"AS#1:DEFINTA-Z:DEFUSR=&HF89F:I=USR(0)
+
